@@ -17,15 +17,19 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
+
     public function apropos()
     {
-        return $this->render('apropos/apropos.html.twig', [
+        return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
         ]);
     }
-    public function contact()
+    /**
+     * @route("/contact","name=index_contact")
+     */
+    public function contacter()
     {
-        return $this->render('contact/contact.html.twig', [
+        return $this->render('home/contact.html.twig', [
             'controller_name' => 'HomeController',
         ]);
     }
@@ -35,7 +39,7 @@ class HomeController extends AbstractController
 
     public function programme()
     {
-        return $this->render("programme/programme.html.twig", [
+        return $this->render("home/programme.html.twig", [
             'controller_name' => "HomeController",
         ]);
     }
@@ -50,6 +54,12 @@ class HomeController extends AbstractController
             'controller_name' => "HomeController",
         ]);
     }
-    
-
+    /**
+     * @route("/actualitees","name=index_actualitees")
+     */
+    public function actualitees(){
+        return $this->render("home/actualitees.html.twig",[
+            "controller_name"=>"index_actualitees",
+        ]);
+    }
 }
