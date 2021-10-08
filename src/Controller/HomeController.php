@@ -18,12 +18,6 @@ class HomeController extends AbstractController
         ]);
     }
 
-    public function apropos()
-    {
-        return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
-        ]);
-    }
     /**
      * @route("/contact","name=index_contact")
      */

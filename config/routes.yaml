@@ -1,10 +1,13 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
-index:
-    path: /accueil
-    controller: App\Controller\HomeController::index
-apropos:
-    path: /apropos
-    controller: App\Controller\HomeController::apropos
+#index:
+#    path: /accueil
+#    controller: App\Controller\HomeController::index
+#apropos:
+ #   path: /apropos
+  #  controller: App\Controller\HomeController::apropos
 
+    #mec:
+     #   path: /mec
+      #  controller: App\Controller\MecController::mecmec
