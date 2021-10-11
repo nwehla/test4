@@ -47,11 +47,12 @@ class DefaultController extends AbstractController
     
 
     /**
-     * @route("/redir",name="index-redir")
+     * @route("/redir/{id}",name="index-redir")
      */
-    public function redirecto()
+    public function redirecto($id)
     {
         return $this->redirectToRoute('home');
     }
+    
   
 }
