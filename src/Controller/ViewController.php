@@ -44,7 +44,7 @@ class ViewController extends AbstractController
                 $tab=["nabi","moaz","modou","ange"];
               
               
-                return $this->render("view/vue.html.twig",[
+                return $this->render("view/eleve.html.twig",[
                   "nom"=>$tab,
                   
                 ]);
