@@ -48,5 +48,32 @@ class ViewController extends AbstractController
                   "nom"=>$tab,
                   
                 ]);
-              }  
+              } 
+          /**
+           *@Route("/tabcalcul",name="index_tableau")
+           */
+          public function tabcal():Response
+          {
+            return $this->render("view/calcul.html.twig",[
+              
+            ]);
+          }
+          /**
+           *@Route("/condition",name="index_condition")
+           */
+          public function condition():Response
+          {
+            return $this->render("view/condition.html.twig",[
+              
+            ]);
+          }
+          /**
+           *@Route("/boucle",name="index_boucle")
+           */
+          public function boucle():Response
+          {
+            return $this->render("view/boucle.html.twig",[
+              
+            ]);
+          }
             }
