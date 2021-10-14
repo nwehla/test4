@@ -18,7 +18,7 @@ class DefaultController extends AbstractController
         ]);
     }
         /**
-         *  @route("/salut", name="default")
+         *  @route("/salut", name="index_salut")
          */
         public function bonjour()
         {
@@ -27,19 +27,19 @@ class DefaultController extends AbstractController
         
     }
     /**
-     * @route("/choixeleve/{id}", name="default")
+     * @route("/name/{id}", name="index_eleve")
      */
     public function choixeleve($id){
         return new Response("bonjour mr eleve $id");
     }
     /**
-     * @route("/nom/{id}", name="default" )
+     * @route("/nom/{id}/{age}", name="default" )
      */
-    public function eleve($id):Response
+    public function eleve($id,$age):Response
     {
         return $this->render("default/index.html.twig", array(
             'id' => $id,
-            'age' => $id,
+            'age' => $age,
         ));
     }
    

@@ -39,6 +39,63 @@
             {{ x }} - {{ y }} = {{ Diff}} <br>
             Reponse = {{ Diff}}
     </div>
+    <div>
+        <h2>Exo 5</h2>
+        //Addition</br>
+        {% set A,B,C,D = '10','11','12','15' %}
+        {% set resultat = A + B + C + D  %}
+        
+        <h2>{{A}}+{{B}}+{{C}}+{{D}}=> Resultat: {{resultat}}</h2>
+    </div>
+    <div>
+        //Soustraction</br>
+        {% set A,B,C,D = '10','11','12','15' %}
+        {% set resultat = A - B - C - D  %}
+        
+        <h2>{{A}}+{{B}}+{{C}}+{{D}}=Resultat:{{resultat}}</h2>
+    </div>
+    <div>
+        //Multiplication</br>
+        {% set A,B,C,D = '10','11','12','15' %}
+        {% set resultat = A * B * C * D  %}
+        
+        <h2>{{A}}*{{B}}*{{C}}*{{D}}=Resultat:{{resultat}}</h2>
+    </div>
+    <div>
+        //Division</br>
+        {% set A,B,C,D = '10','11','12','15' %}
+        {% set resultat = A / B / C / D  %}
+        
+        <h2>{{A}}/{{B}}/{{C}}/{{D}}=Resultat:{{resultat}}</h2>
+    </div>
+    <div>
+        <h2>Calcul de la moyenne par eleve et de la decision</h2>
+        
+        <h3>les notes Pierre:</br>
+            {% set A,Al,P,R = '10','8','10','10' %}
+            (Analyse:{{A}}),(Programmation:{{Al}})</br>
+          (Recherche:{{P}}),(Analyse:{{R}})
+        </br>----------------------------------</br>
+          Moyenne:{% set m = (A+Al+P+R)/4 %}{{m}}</h3>
+
+        Appreciation: 
+         
+        
+        {% set fonctionAppreciation({% set moyenne %})%}{
+            {% set reponse %}
+            {% if m < 10 %}
+            reponse ='Non Acquis'</br>
+            {% elseif m >= 10 %}
+                reponse='En cours de connaissance'</br>
+   
+            {% endif %}
+            reponse='Acquis' </br>
+   
+            return ->reponse;
+        }
+        
+        
+    </div>
 
 
 </ul>
