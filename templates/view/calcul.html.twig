@@ -39,8 +39,8 @@
             {{ x }} - {{ y }} = {{ Diff}} <br>
             Reponse = {{ Diff}}
     </div>
-    <div>
-        <h2>Exo 5</h2>
+    
+        
         //Addition</br>
         {% set A,B,C,D = '10','11','12','15' %}
         {% set resultat = A + B + C + D  %}
@@ -69,19 +69,165 @@
         <h2>{{A}}/{{B}}/{{C}}/{{D}}=Resultat:{{resultat}}</h2>
     </div>
     <div>
-        <h2>Calcul de la moyenne par eleve et de la decision</h2>
+    <head>
+    <title>Tableau</title>
+    <style>
+      table {border-style: ridge;  border-width: 150px; border-color: #8ebf42; background-color: #d9d9d9;}
+      th  {border:5px solid #095484;}   
+      td {border:20px groove #1c87c9;}
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th></th>
+        <th>A</th>
+        <th>B</th>
+        <th>C</th>
+        <th>D</th>
+        <th>Resultats</th>
+      </tr>
+      <tr>
+        <td>Addition</td>
+        {% set A,B,C,D = '10','11','12','15' %}
+        {% set Addition = A + B + C + D  %}
+        <td>{{A}}</td>
+        <td>{{B}}</td>
+        <td>{{C}}</td>
+        <td>{{D}}</td>
+        <td>{{Addition}}</td>
+      </tr>
+        <td>Soustraction</td>
+        {% set A,B,C,D = '20','11','13','16' %}
+        {% set Soustraction = A - B - C - D  %}
         
-        <h3>les notes Pierre:</br>
-            {% set A,Al,P,R = '10','8','10','10' %}
-            (Analyse:{{A}}),(Programmation:{{Al}})</br>
-          (Recherche:{{P}}),(Analyse:{{R}})
-        </br>----------------------------------</br>
-          Moyenne:{% set m = (A+Al+P+R)/4 %}{{m}}</h3>
+        <td>{{A}}</td>
+        <td>{{B}}</td>
+        <td>{{C}}</td>
+        <td>{{D}}</td>
+        <td>{{Soustraction}}</td>
+      </tr>
+        <td>Multiplication</td>
+        {% set A,B,C,D = '30','11','14','17' %}
+        {% set Multiplication = A * B * C * D  %}
+        <td>{{A}}</td>
+        <td>{{B}}</td>
+        <td>{{C}}</td>
+        <td>{{D}}</td>
+        <td>{{Multiplication}}</td>
+      </tr>
+        <td>Division</td>
+        {% set A,B = '40','11' %}
+        {% set Division = A / B   %}
+        <td>{{A}}</td>
+        <td>{{B}}</td>
+        <td></td>
+        <td></td>
+        <td>{{Division}}</td>
+      </tr>
+    </table>
+  
+    </div>
+    <div>
+    <h2>Exo6</h2>
+        <h2>Calcul de la moyenne par eleve et de la decision</h2>
 
-        Appreciation: 
+  <body>
+    <table>
+      <tr>
+        <th></th>
+        <th>Pierre</th>
+        <th>Paul</th>
+        <th>Jacques</th>
+        <th>Delphine</th>
+      </tr>
+      <tr>
+        <td>Analyse</td>
+        {% set API,AP,AJ,AD = '10','11','9','15' %}
+        
+        <td>{{API}}</td>
+        <td>{{AP}}</td>
+        <td>{{AJ}}</td>
+        <td>{{AD}}</td>
+      </tr>
+      <tr>
+        <td>Algorithme</td>
+        {% set ALPI,ALP,ALJ,ALD = '8','10','15','18' %}
+        {% set Soustraction = A - B - C - D  %}
+        
+        <td>{{ALPI}}</td>
+        <td>{{ALP}}</td>
+        <td>{{ALJ}}</td>
+        <td>{{ALD}}</td>
+      </tr>
+      <tr>
+        <td>Programmation</td>
+        {% set PPI,PP,PJ,PD = '10','11','14','17' %}
+        {% set Multiplication = A * B * C * D  %}
+        <td>{{PPI}}</td>
+        <td>{{PP}}</td>
+        <td>{{PJ}}</td>
+        <td>{{PD}}</td>
+      </tr>
+      <tr>
+        <td>Recherche</td>
+        {% set RPI,RP,RJ,RD = '10','11','9','4' %}
+        {% set Division = A / B   %}
+        <td>{{RPI}}</td>
+        <td>{{RP}}</td>
+        <td>{{RJ}}</td>
+        <td>{{RD}}</td>
+      </tr>
+      <tr>
+        <td>Moyenne</td>
+        {% set moypi = (API+ALPI+PPI+RPI)/4 %}
+        {% set moyp = (AP+ALP+PP+RP)/4 %}
+        {% set moyj = (AJ+ALJ+PJ+RJ)/4 %}
+        {% set moypd = (AD+ALD+PD+RD)/4 %}
+        
+        <td>{{moypi}}</td>
+        <td>{{moyp}}</td>
+        <td>{{moyj}}</td>
+        <td>{{moypd}}</td>
+      </tr>
+      <tr>
+        <td>decision</td>
+        
+        <td>{% if moypi >= 12 %}
+          Acquis</br>
+          {% elseif moypi >= 10 %}
+          En cours d'acquisition</br>
+          {% else %}
+          Non acquis
+          {% endif %}
+          </td>
+
+        <td>{% if moyp >= 12 %}
+          Acquis</br>
+          {% elseif moyp >= 10 %}
+          En cours d'acquisition</br>
+          {% else %}
+          Non acquis
+          {% endif %}</td>
+        <td>{% if moyj >= 12 %}
+          Acquis</br>
+          {% elseif moyj >= 10 %}
+          En cours d'acquisition</br>
+          {% else %}
+          Non acquis
+          {% endif %}</td>
+        <td>{% if moypd >= 12 %}
+          Acquis</br>
+          {% elseif moypd >= 10 %}
+          En cours d'acquisition</br>
+          {% else %}
+          Non acquis
+          {% endif %}</td>
+      </tr>
+    </table>
          
         
-        {% set fonctionAppreciation({% set moyenne %})%}{
+        {#% set fonctionAppreciation({% set moyenne %})%}{
             {% set reponse %}
             {% if m < 10 %}
             reponse ='Non Acquis'</br>
@@ -92,7 +238,7 @@
             reponse='Acquis' </br>
    
             return ->reponse;
-        }
+        #}
         
         
     </div>

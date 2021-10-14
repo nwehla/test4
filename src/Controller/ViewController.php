@@ -76,4 +76,13 @@ class ViewController extends AbstractController
               
             ]);
           }
+          /**
+           *@Route("/filtre",name="index_filtre")
+           */
+          public function filtre²():Response
+          {
+            return $this->render("view/filtre.html.twig",[
+              
+            ]);
+          }
             }
