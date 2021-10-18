@@ -1,3 +1,22 @@
-<h3>user page</h3>
+{% extends 'base.html.twig' %}
 
-{% include "menu_biblio_user.html.twig"%}
+{% block title %}Bienvenu(s) dans notre Bibliotheque!{% endblock %}
+
+
+{% block body %}
+<div id="main">
+    <div id="g">
+        
+           User: {% include "menu_biblio_user.html.twig"%}
+    
+</div>
+<div>
+    <h3>ton profil:</h3>
+</div>
+
+
+
+
+
+
+{% endblock %}

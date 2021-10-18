@@ -1,3 +1,22 @@
-<h1>
-livre
-</h1>
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenu(s) dans notre Bibliotheque!{% endblock %}
+
+
+{% block body %}
+<div id="main">
+    <div id="g">
+        
+           User: {% include "menu_biblio_user.html.twig"%}
+    
+</div>
+<div>
+    <h3>Livres</h3>
+</div>
+
+
+
+
+
+
+{% endblock %}

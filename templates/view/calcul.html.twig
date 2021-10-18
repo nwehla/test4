@@ -69,6 +69,21 @@
         <h2>{{A}}/{{B}}/{{C}}/{{D}}=Resultat:{{resultat}}</h2>
     </div>
     <div>
+        //puissance</br>
+        {% set A,B,C,D = '10','11','12','15' %}
+        
+ 
+        {% set resultat1 =   A ** A  %}
+        {% set resultat2 = B * B  %}
+        {% set resultat3 = C * C %}
+        {% set resultat4 = D * D %}
+        
+        <h2>puissance {{A}}={{resultat1}}</h2>
+        <h2>{{B}}²={{resultat2}}</h2>
+        <h2>{{C}}²={{resultat3}}</h2>
+        <h2>{{B}}²={{resultat4}}</h2>
+    </div>
+    <div>
     <head>
     <title>Tableau</title>
     <style>

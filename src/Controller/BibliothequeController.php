@@ -103,7 +103,7 @@ class BibliothequeController extends AbstractController
         
     }
     /**
-     * @Route("/systeme", name="bibi_système")
+     * @Route("/systeme",name="bibi_systeme")
      */
     public function systeme(): Response
     {
@@ -113,17 +113,17 @@ class BibliothequeController extends AbstractController
         
     }
     /**
-     * @Route("/utilisateurs", name="bibi_utilisateurs ")
+     * @Route("/utilisateurs", name="bibi_utilisateur")
      */
     public function utiliser(): Response
     {
-        return $this->render('bibliotheque/utilisateur.html.twig', [
+        return $this->render('bibliotheque/utilisateurs.html.twig', [
             'controller_name' => 'BibliothequeController',
         ]);
         
     }
     /**
-     * @Route("/contenu", name="bibi_contenu ")
+     * @Route("/contenu", name="bibi_contenu")
      */
     public function contenir(): Response
     {
@@ -133,7 +133,7 @@ class BibliothequeController extends AbstractController
         
     }
     /**
-     * @Route("/categorie", name="bibi_	categorie")
+     * @Route("/categorie", name="bibi_categorie")
      */
     public function categoriser(): Response
     {

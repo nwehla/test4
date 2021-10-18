@@ -1,6 +1,27 @@
-<div>
-<h2>Administration<h2>
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenu(s) dans notre Bibliotheque!{% endblock %}
+
+
+{% block body %}
+<div id="main">
+    
+    <div id="d">
+        
+           Admin: {% include "menu_biblio_admin.html.twig"%}
+            
+    </div>
+    <div>
+        <h3>
+            Administration:
+        </h3>
+    </div>
+    
 </div>
-<div>
-<h2>{% include "menu_biblio_admin.html.twig" %}<h2>
-</div>
+
+
+
+
+
+
+{% endblock %}
