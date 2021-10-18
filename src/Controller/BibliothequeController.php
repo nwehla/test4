@@ -90,5 +90,88 @@ class BibliothequeController extends AbstractController
         return $this->render('bibliotheque/admin.html.twig', [
             'controller_name' => 'BibliothequeController',
         ]);
+        
     }
+    /**
+     * @Route("/administration", name="bibi_administration")
+     */
+    public function administrer(): Response
+    {
+        return $this->render('bibliotheque/administration.html.twig', [
+            'controller_name' => 'BibliothequeController',
+        ]);
+        
+    }
+    /**
+     * @Route("/systeme", name="bibi_système")
+     */
+    public function systeme(): Response
+    {
+        return $this->render('bibliotheque/systeme.html.twig', [
+            'controller_name' => 'BibliothequeController',
+        ]);
+        
+    }
+    /**
+     * @Route("/utilisateurs", name="bibi_utilisateurs ")
+     */
+    public function utiliser(): Response
+    {
+        return $this->render('bibliotheque/utilisateur.html.twig', [
+            'controller_name' => 'BibliothequeController',
+        ]);
+        
+    }
+    /**
+     * @Route("/contenu", name="bibi_contenu ")
+     */
+    public function contenir(): Response
+    {
+        return $this->render('bibliotheque/contenu.html.twig', [
+            'controller_name' => 'BibliothequeController',
+        ]);
+        
+    }
+    /**
+     * @Route("/categorie", name="bibi_	categorie")
+     */
+    public function categoriser(): Response
+    {
+        return $this->render('bibliotheque/categorie.html.twig', [
+            'controller_name' => 'BibliothequeController',
+        ]);
+        
+    }
+    /**
+     * @Route("/article", name="bibi_article")
+     */
+    public function presenter(): Response
+    {
+        return $this->render('bibliotheque/article.html.twig', [
+            'controller_name' => 'BibliothequeController',
+        ]);
+        
+    }
+ 
+    /**
+     * @Route("/image", name="bibi_image")
+     */
+    public function image(): Response
+    {
+        return $this->render('bibliotheque/images.html.twig', [
+            'controller_name' => 'BibliothequeController',
+        ]);
+        
+    }
+    /**
+     * @Route("/extension", name="bibi_extension")
+     */
+    public function extension(): Response
+    {
+        return $this->render('bibliotheque/extension.html.twig', [
+            'controller_name' => 'BibliothequeController',
+        ]);
+        
+    }
+ 
 }
