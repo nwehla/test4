@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenu(s) dans notre Bibliotheque!{% endblock %}
+
+{% block body %}
+<style>
+
+
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif;  }
+    .example-wrapper code { font-style:bold;background: green; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1 >Hello {{ controller_name }} create by Emma! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        
+        <li>  <a href="{{ path('') }}"> Liste des Eleves </a> </li>    
+        <li>  <a href="{{ path('') }}"> Mon Profil: </a> </li>    
+
+
+    
+    </ul>
+
+
+</div>
+{% endblock %}
