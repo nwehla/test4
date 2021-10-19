@@ -11,15 +11,20 @@
         float: left;
       }
       
-      li a {
-        display: block;
+       a {
+        display:inline-block;
         color:ivory;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
       }
-      li a:hover {
+      a:hover {
         background-color: #111;
       
       
       } 
+      body{
+        background-color:rgb(95, 95, 211);
+        color:ivory;
+        font-size: 30px;
+    }
