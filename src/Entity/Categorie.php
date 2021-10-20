@@ -23,14 +23,9 @@ class Categorie
     private $titre;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text", nullable=true)
      */
     private $resume;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $articles;
 
     public function getId(): ?int
     {
@@ -54,21 +49,9 @@ class Categorie
         return $this->resume;
     }
 
-    public function setResume(string $resume): self
+    public function setResume(?string $resume): self
     {
         $this->resume = $resume;
-
-        return $this;
-    }
-
-    public function getArticles(): ?string
-    {
-        return $this->articles;
-    }
-
-    public function setArticles(string $articles): self
-    {
-        $this->articles = $articles;
 
         return $this;
     }

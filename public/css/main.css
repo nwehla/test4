@@ -26,5 +26,13 @@
       body{
         background-color:rgb(95, 95, 211);
         color:ivory;
-        font-size: 30px;
+        font-size: 10px;
+    }
+    footer{
+      text-align: center;
+      background-color: rgb(211, 144, 120);
+      color:ivory;
+      border: 2px,dotted,rgb(179, 89, 89);
+      border-style: dotted;
+      border-color: black;
     }

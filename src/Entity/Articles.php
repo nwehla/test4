@@ -23,14 +23,14 @@ class Articles
     private $titre;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
-    private $Contenu;
+    private $contenu;
 
     /**
      * @ORM\Column(type="date")
      */
-    private $Date;
+    private $date;
 
     public function getId(): ?int
     {
@@ -51,24 +51,24 @@ class Articles
 
     public function getContenu(): ?string
     {
-        return $this->Contenu;
+        return $this->contenu;
     }
 
-    public function setContenu(string $Contenu): self
+    public function setContenu(string $contenu): self
     {
-        $this->Contenu = $Contenu;
+        $this->contenu = $contenu;
 
         return $this;
     }
 
     public function getDate(): ?\DateTimeInterface
     {
-        return $this->Date;
+        return $this->date;
     }
 
-    public function setDate(\DateTimeInterface $Date): self
+    public function setDate(\DateTimeInterface $date): self
     {
-        $this->Date = $Date;
+        $this->date = $date;
 
         return $this;
     }

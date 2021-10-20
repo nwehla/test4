@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Articles{% endblock %}
+
+{% block body %}
+    <h1>Articles index</h1>
+<table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Contenu</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+        <tr>
+        <td>
+          {{articles.id}}
+        </td>
+        </tr>
+        <td>
+          {{articles.titre}}
+        </td>
+        </tr>
+        <td>
+          {{articles.contenu}}
+        </td>
+        </tr>
+        <td>
+          {{articles.date}}
+        </td>
+        </tr>
+        {% else %}
+        <td>
+        no record found
+        </td>
+        
+{% endfor %}
+          
+
+
+        </tbody>
+    </table>
+{% endblock %}
