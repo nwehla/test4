@@ -3,12 +3,17 @@
 {% block title %}New Articles{% endblock %}
 
 {% block body %}
+
+<div>
+<h1>
     <h1>Articles index</h1>
 <table class="table">
         <thead>
             <tr>
+            <th>Id</th>
                 <th>Title</th>
-                <th>Contenu</th>
+                <th>Resume</th>
+                
 
             </tr>
         </thead>
@@ -16,25 +21,19 @@
         {% for article in articles %}
         <tr>
         <td>
-          {{articles.id}}
+          {{article.id}}
         </td>
-        </tr>
+        
         <td>
-          {{articles.titre}}
+          {{article.titre}}
         </td>
-        </tr>
+        
         <td>
-          {{articles.contenu}}
+          {{article.resume}}
         </td>
+        
         </tr>
-        <td>
-          {{articles.date}}
-        </td>
-        </tr>
-        {% else %}
-        <td>
-        no record found
-        </td>
+        
         
 {% endfor %}
           
