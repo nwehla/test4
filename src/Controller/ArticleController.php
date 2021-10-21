@@ -33,22 +33,43 @@ class ArticleController extends AbstractController
         ]);
     }
      /**
+     * @Route("/nouveau", name="articles_nouveau", methods={"GET", "POST"})
+     */
+    public function nouveau(Request $request, EntityManagerInterface $em): Response
+    {
+
+       $articles = new Articles();
+
+       // Ici je fais un enregistrement Manuel, on verra la suite avec le  Formulaire
+       $articles->setTitre(" Titre de mon Article");
+       $articles->setImages(" photo de mon Article");
+       $articles->setResume(" Titre de mon Article");
+       $articles->setDate(new  \DateTime());
+       $articles->setContenu(" Contenu de mon Article Contenu de mon ArticleContenu de mon ArticleContenu de mon ArticleContenu de mon Article");
+
+       // Je persiste Mon Enregistrement
+       $em->persist($articles);
+       $em->flush();
+
+       // J'envoie au niveau du temple pour l'enregistrement
+       return $this->render('article/nouveau.html.twig', [
+           'articles' => $articles,
+       ]);
+    }
+    
+    
+
+
+     /**
      * @Route("/{id}", name="articles_affichage", methods={"GET"})
      */
     public function show(Articles $articles, ArticlesRepository $articlesRepository, Request $request, EntityManagerInterface $manager ): Response
     {
-        return $this->render('articles/affichage.html.twig', [
+        return $this->render('article/affichage.html.twig', [
             'id'=>$articles->getId(),
             'articles' => $articles,
         ]);
     }
-     /**
-     * @Route("/nouveau", name="nouveau_article")
-     */
-    public function nouveau(): Response
-    {
-        return $this->render('articles/nouveau.html.twig', [
-            
-        ]);
-    }
+     
+    
 }

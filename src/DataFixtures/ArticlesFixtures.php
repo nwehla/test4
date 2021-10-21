@@ -20,10 +20,10 @@ class ArticlesFixtures extends Fixture
        
           $articles = new Articles();
           
-          $articles->setTitre("titre")
-                  ->setContenu("bonjour")    
-                
-                ->setResume("resume")
+          $articles->setTitre($faker->sentence())
+                  ->setContenu($faker->sentence())
+                   ->setImages("bonjour")
+                    ->setResume($faker->sentence())
                   ->setDate(new \DateTime());
           $manager->persist($articles);
       

@@ -33,11 +33,6 @@ class Articles
     private $date;
 
     /**
-     * @ORM\Column(type="array")
-     */
-    private $images = [];
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $resume;
@@ -45,8 +40,9 @@ class Articles
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $image;
+    private $images;
 
+   
     public function getId(): ?int
     {
         return $this->id;
@@ -88,18 +84,6 @@ class Articles
         return $this;
     }
 
-    public function getImages(): ?array
-    {
-        return $this->images;
-    }
-
-    public function setImages(array $images): self
-    {
-        $this->images = $images;
-
-        return $this;
-    }
-
     public function getResume(): ?string
     {
         return $this->resume;
@@ -112,15 +96,17 @@ class Articles
         return $this;
     }
 
-    public function getImage(): ?string
+    public function getImages(): ?string
     {
-        return $this->image;
+        return $this->images;
     }
 
-    public function setImage(string $image): self
+    public function setImages(string $images): self
     {
-        $this->image = $image;
+        $this->images = $images;
 
         return $this;
     }
-}
+
+    
+    }
