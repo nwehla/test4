@@ -44,9 +44,9 @@ class ArticleController extends AbstractController
        $articles->setTitre(" Titre de mon Article");
        $articles->setImages(" photo de mon Article");
        $articles->setResume(" Titre de mon Article");
-       $articles->setDate(new  \DateTime());
        $articles->setContenu(" Contenu de mon Article Contenu de mon ArticleContenu de mon ArticleContenu de mon ArticleContenu de mon Article");
-
+       $articles->setAction("Montrer une action");
+       $articles->setDate(new  \DateTime());
        // Je persiste Mon Enregistrement
        $em->persist($articles);
        $em->flush();
@@ -60,16 +60,19 @@ class ArticleController extends AbstractController
     
 
 
-     /**
-     * @Route("/{id}", name="articles_affichage", methods={"GET"})
+     
+    //deuxième méthode
+    /**
+     * @Route("/{id}", name="art_affichage",methods={"GET"})
      */
-    public function show(Articles $articles, ArticlesRepository $articlesRepository, Request $request, EntityManagerInterface $manager ): Response
+    public function montrer(Articles $articles, ArticlesRepository $articlesRepository, Request $request, EntityManagerInterface $manager): Response
     {
         return $this->render('article/affichage.html.twig', [
-            'id'=>$articles->getId(),
+            'id' => $articles->getId(),
             'articles' => $articles,
         ]);
     }
+
      
     
 }

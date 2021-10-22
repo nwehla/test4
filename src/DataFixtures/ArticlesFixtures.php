@@ -3,32 +3,30 @@
 namespace App\DataFixtures;
 
 use App\Entity\Articles;
-
+use DateTime;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
  use Faker;
 
 class ArticlesFixtures extends Fixture
 {
-    public function load(ObjectManager $manager): void
-    {
-
-        // J'utlise fixtures avec FAKER
-      $faker = Faker\Factory::create('fr_FR');
+  public function load(ObjectManager $manager): void
+  {
 
       
-       
+      for ($i=0; $i<20 ; $i++ ) 
+      { 
           $articles = new Articles();
           
-          $articles->setTitre($faker->sentence())
-                  ->setContenu($faker->sentence())
-                   ->setImages("bonjour")
-                    ->setResume($faker->sentence())
-                  ->setDate(new \DateTime());
+          $articles->setTitre(" Titre de l'article N°$i ")
+                  ->setImages(" Image de l'article N° $i ")   
+                  ->setContenu(" Contenu de l'article N° $i ")  
+                  ->setResume(" Resume de l'article N° $i ")   
+                  ->setDate(new DateTime());   
+          
           $manager->persist($articles);
-      
+      }
    $manager->flush();
-  }
-       
+  }       
 
 }

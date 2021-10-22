@@ -42,6 +42,11 @@ class Articles
      */
     private $images;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $action;
+
    
     public function getId(): ?int
     {
@@ -104,6 +109,18 @@ class Articles
     public function setImages(string $images): self
     {
         $this->images = $images;
+
+        return $this;
+    }
+
+    public function getAction(): ?string
+    {
+        return $this->action;
+    }
+
+    public function setAction(string $action): self
+    {
+        $this->action = $action;
 
         return $this;
     }
