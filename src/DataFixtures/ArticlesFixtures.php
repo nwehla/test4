@@ -22,6 +22,7 @@ class ArticlesFixtures extends Fixture
                   ->setImages(" Image de l'article N° $i ")   
                   ->setContenu(" Contenu de l'article N° $i ")  
                   ->setResume(" Resume de l'article N° $i ")   
+                   
                   ->setDate(new DateTime());   
           
           $manager->persist($articles);

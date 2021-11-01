@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Controller;use App\Entity\Articles;
+namespace App\Controller;
+use App\Entity\Articles;
 use App\Form\ArticlesType;
 use App\Repository\ArticlesRepository;
 
@@ -8,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 
-use Symfony\Component\HttpFoundation\Request;
+    use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -45,7 +46,7 @@ class ArticleController extends AbstractController
        $articles->setImages(" photo de mon Article");
        $articles->setResume(" Titre de mon Article");
        $articles->setContenu(" Contenu de mon Article Contenu de mon ArticleContenu de mon ArticleContenu de mon ArticleContenu de mon Article");
-       $articles->setAction("Montrer une action");
+       
        $articles->setDate(new  \DateTime());
        // Je persiste Mon Enregistrement
        $em->persist($articles);
