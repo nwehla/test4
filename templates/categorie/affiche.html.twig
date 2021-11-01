@@ -6,45 +6,33 @@
 
 <div>
 <h1>
-    <h1>Categorie index</h1>
+    <h1>Categorie </h1>
 <table class="table">
         <thead>
             <tr>
             <th>Id</th>
                 <th>Title</th>
-                <th>Resume</th>
-                <th>Action</th>
-                
+                <th>Resume</th>                
 
             </tr>
         </thead>
         <tbody>
-        {% for categorie in cat %}
+        
         <tr>
         <td>
-          {{categorie.id}}
+          {{cat.id}}
         </td>
         
         <td>
-          {{categorie.titre}}
+          {{cat.titre}}
         </td>
         
         <td>
-          {{categorie.resume}}
+          {{cat.resume}}
         </td>
-        
-        <td>
-          <a href="{{path('cat_affiche',{'id':categorie.id})}}">Cliquez ici !</a>
-        </td>
-        
         
         </tr>
         
-        
-{% endfor %}
-          
-
-
         </tbody>
     </table>
 {% endblock %}

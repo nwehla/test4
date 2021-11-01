@@ -12,11 +12,14 @@ use App\Repository\CategorieRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+/**
+ *@Route("/categorie")
+ */
 
 class CategorieController extends AbstractController
 {
     /**
-     * @Route("/categorie", name="categorie")
+     * @Route("/", name="categorie")
      */
     public function index(CategorieRepository $CategorieRepository): Response
     { 
@@ -27,12 +30,11 @@ class CategorieController extends AbstractController
             
         ]);
     }
-        /**
-         *@Route("/{id}",name="cat_affiche")
+        /**  
          */
         public function afficheCategorie( CategorieRepository $CategorieRepository  , Categorie $Categorie ,Request $Request,EntityManagerInterFace $Manager):Response
         {
-            return $this->render("Categorie/affiche.php",[
+            return $this->render("Categorie/affiche.html.twig",[
                 "id"=>$Categorie->getId(),
                 "cat"=>$Categorie,
             ]);
