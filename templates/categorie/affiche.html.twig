@@ -3,36 +3,25 @@
 {% block title %}Categorie{% endblock %}
 
 {% block body %}
-
-<div>
-<h1>
-    <h1>Categorie </h1>
-<table class="table">
-        <thead>
-            <tr>
-            <th>Id</th>
-                <th>Title</th>
-                <th>Resume</th>                
-
-            </tr>
-        </thead>
-        <tbody>
-        
+<div class="container">
+    <h1>{{cat.titre}}</h1>
+    
+    <table class="table table-dark table-striped">
+      <thead>
         <tr>
-        <td>
-          {{cat.id}}
-        </td>
-        
-        <td>
-          {{cat.titre}}
-        </td>
-        
-        <td>
-          {{cat.resume}}
-        </td>
-        
+          <th>Id</th>
+          <th>Titre</th>
+          <th>Resume</th>
         </tr>
-        
-        </tbody>
+      </thead>
+      <tbody>
+        <tr>
+          <td> {{cat.id}}</td>
+          <td> {{cat.titre}}</td>
+          <td> {{cat.resume}}</td>
+        </tr>
+      </tbody>
     </table>
+  </div>
+
 {% endblock %}
