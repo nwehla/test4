@@ -58,9 +58,9 @@ class Utilisateurs
     private $email;
 
     /**
-     * @ORM\Column(type="array")
+     * @ORM\Column(type="string", length=255)
      */
-    private $role = [	'locataires','propriétaires','gestionnaires','administrateurs'];
+    private $role;
 
     public function getId(): ?int
     {
@@ -163,15 +163,16 @@ class Utilisateurs
         return $this;
     }
 
-    public function getRole(): ?array
+    public function getRole(): ?string
     {
         return $this->role;
     }
 
-    public function setRole(array $role): self
+    public function setRole(string $role): self
     {
         $this->role = $role;
 
         return $this;
     }
-}
+
+   }

@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les utilisateurs{% endblock %}
+
+{% block body %}
+
+<div>
+<h1>
+    <h1>{{uti.nom}} {{uti.prenom}}</h1>
+
+  <table class="table table-dark table-striped">
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">Adresse</th>
+      <th scope="col">Mot de passe</th>
+      <th scope="col">Login</th>
+      <th scope="col">Photo</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"> {{uti.id}}
+      </th>
+      <td> {{uti.nom}}
+      </td>
+      <td> {{uti.prenom}}
+      </td>
+      <td> {{uti.adresse}}
+      </td>
+      <td> {{uti.motdepasse}}
+      </td>
+      <td> {{uti.login}}
+      </td>
+      <td> {{uti.photo}}
+      </td>
+      
+      <td> {{uti.email}}
+      </td>
+      
+    
+    
+    </tr>
+  </tbody>
+</table>
+{% endblock %}

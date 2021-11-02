@@ -13,10 +13,13 @@ class CategoriesFixtures extends Fixture
 
       
       for ($i=0; $i<20 ; $i++ ) 
+
       { 
           $cat = new Categorie();
-          
-          $cat->setTitre(" Titre de la categorie N°$i ")
+          $cate=["fiction","thriller","policier","jeunesse","adulte"];
+        shuffle($cate);
+        
+          $cat->setTitre($cate[0])
                   ->setResume(" Resume de la categorie N° $i ") ;  
           
           $manager->persist($cat);
