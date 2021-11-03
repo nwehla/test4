@@ -1,17 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Admin</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link" href="{{ path('article') }}">livres</a>                        
+        <a class="nav-link" href="{{ path('bibi_documentation') }}">Document</a>                        
+        <a class="nav-link" href="{{ path('bibi_location') }}">Location</a>                        
+        <a class="nav-link" href="{{ path('bibi_contact') }}">Contact </a>                        
+        <a class="nav-link" href="{{path('bibi_apropos')}}">A propos</a>                        
+        <a class="nav-link" href="{{ path('bibi_user') }}">profil</a>                        
+        <a class="nav-link" href="{{ path('bibi_admin') }}"> Administration</a>                        
+        <a class="nav-link" href="{{ path('bibi_connexion') }}"> Connexion</a>                        
+        <a class="nav-link" href="{{ path('bibliotheque') }}"> Deconnexion</a>                        
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </div>
+    </div>
+  </div>
+    
+  </div>
+</nav>
+ 
 
-  <nav>
-    <ul>
-        <a href="{{ path('bibliotheque') }}">Accueil</a>    
-          <a href="{{ path('bibi_livre') }}">livres </a>     
-          <a href="{{ path('bibi_contact') }}">Contact </a>     
-          <a href="{{path('bibi_apropos')}}">A propos</a>   
-          <a href="{{ path('bibi_documentation') }}">Document</a>     
-          <a href="{{ path('bibi_location') }}">Location</a> 
-          <a href="{{ path('bibi_user') }}">profil</a> 
-          <a href="{{ path('bibi_admin') }}"> admin</a> 
-          <a href="{{ path('bibi_connexion') }}"> Connexion</a>     
-          <a href="{{ path('bibliotheque') }}"> Deconnexion</a>     
-        
-        </ul>
-  </nav>
-  
+   

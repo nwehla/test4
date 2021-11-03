@@ -30,17 +30,8 @@ class CategorieController extends AbstractController
             
         ]);
     }
-        /**
-         *@Route("/{id}",name="cat_affiche")
-         */
-        public function afficheCategorie( CategorieRepository $CategorieRepository  , Categorie $Categorie ,Request $Request,EntityManagerInterFace $Manager):Response
-        {
-            return $this->render("Categorie/affiche.html.twig",[
-                "id"=>$Categorie->getId(),
-                "cat"=>$Categorie,
-            ]);
-        }
-        /**
+
+    /**
          *@Route("/formulaire",name="fomulaire_affiche")
          */
         public function formulaire( Request $request,EntityManagerInterFace $manager):Response
@@ -62,5 +53,16 @@ class CategorieController extends AbstractController
                 
             ]);
         }
+        /**
+         *@Route("/{id}",name="cat_affiche")
+         */
+        public function afficheCategorie( CategorieRepository $CategorieRepository  , Categorie $Categorie ,Request $Request,EntityManagerInterFace $Manager):Response
+        {
+            return $this->render("Categorie/affiche.html.twig",[
+                "id"=>$Categorie->getId(),
+                "cat"=>$Categorie,
+            ]);
+        }
+        
     }
 
