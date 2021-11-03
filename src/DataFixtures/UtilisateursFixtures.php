@@ -13,11 +13,15 @@ class UtilisateursFixtures extends Fixture
         for ($i=0; $i<20 ; $i++ ) 
       { 
           $utilisateurs = new Utilisateurs();
-           $rol=array('locataires','propriétaires','gestionnaires','administrateurs');
+          $nom=["Moussa","Ndao","Nwehla","Michot","Balouka","Follereau"];
+          $prenom=["Konate","Modou","Valery","Frederique","Roger","Fabrice"];
+           $rol=array('locataire','propriétaire','gestionnaire','administrateur');
           shuffle($rol);
+          shuffle($nom);
+          shuffle($prenom);
           
-          $utilisateurs->setNom("UtilisateurNom N°$i ")
-                  ->setPrenom("UtilisateurPrenom N° $i ")   
+          $utilisateurs->setNom($nom[0])
+                  ->setPrenom($prenom[0])   
                   ->setPhoto("PhotoUtilisateur N° $i ")  
                   ->setDatedenaissance( new DateTime())    
                   ->setLogin("login N° $i ")    
