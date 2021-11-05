@@ -1,19 +1,52 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Formulaire Article{% endblock %}
+
 {% block body %}
 
-    {{ form_start(formArticle) }}
-        {{ form_widget(formArticle.titre) }}
-        {{ form_widget(formArticle.images) }}
-        {{ form_widget(formArticle.date) }}
-        {{ form_widget(formArticle.resume) }}
-        {{ form_widget(formArticle.contenu) }}
+<h3>Ajouter un article</h3>
+<div>
+    <form>
+        <div class="form-group">
+            
+            {{ form_start(formArticle)}}
 
-      <button type="submit" class="btn btn-success">envoyer</button>
+            <div class="row">
+              <div class="col-md-6">
+                {{ form_label(formArticle.titre) }}
+                 <input class="form-control"{{form_widget(formArticle.titre) }}>
+              </div>
+              <div class="col-md-6">
+                {{ form_label(formArticle.resume) }}
+                <input class="form-control"{{ form_widget(formArticle.resume) }}
+              </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+              <div class="col-md-6">
+                {{ form_label(formArticle.contenu) }}
+                
+            
+                <input  class="form-control" {{ form_widget(formArticle.contenu) }}
+              </div>
+              <div class="col-md-6">
+                {{ form_label(formArticle.date) }}
+                
+            
+                <input  class="form-control" {{ form_widget(formArticle.date) }}
+              </div>
+              <div class="col-md-6">
+                {{ form_label(formArticle.images) }}
+    
+                <input  class="form-control" {{ form_widget(formArticle.images) }}
+              </div>
+            </div>
+        </div>
+         {{ form_end(formArticle) }}
+                <div>
+                    <button class="btn btn-primary">Ajouter !</button>
 
-    {{ form_end(formArticle) }}
-  
-
-
+                </div>
+      </form>
 {% endblock %}
-

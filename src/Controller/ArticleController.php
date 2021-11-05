@@ -33,6 +33,26 @@ class ArticleController extends AbstractController
             "articles"=>$articles,
         ]);
     }
+    /**
+     * @Route("/ajouter",name="ajouter_article_form")
+     */
+    public function ajouter_form_article(Request $request,EntityManagerInterface $manager):Response
+    {
+        $form = $this->createForm(ArticlesType::class);
+               $form->handleRequest($request);
+               if($form->isSubmitted() && $form->isValid()){
+                   $articles=$form->getData();
+                   $manager->persist($articles);
+                   $manager->flush();
+                   $this->addFlash("Article","Vous avez bien ajouté avec succès!");
+
+                   return $this->redirectToRoute("article");
+               }
+               return $this->render("article/new2.html.twig",[
+                   "formArticle"=>$form->createView(),
+               ]);
+            
+    }
     
     /**
      * @Route("/nouvelarticle", name="aarticle.nouvelarticle", methods={"GET", "POST"})
