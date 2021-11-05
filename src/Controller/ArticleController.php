@@ -33,6 +33,45 @@ class ArticleController extends AbstractController
             "articles"=>$articles,
         ]);
     }
+    
+    /**
+     * @Route("/nouvelarticle", name="aarticle.nouvelarticle", methods={"GET", "POST"})
+     */
+        // Ici on Fait une Enregistrement avec une Formulaire
+
+        public function pageForm(Request $request, EntityManagerInterface $manager)
+    {
+        $articles =new Articles(); // Instanciation
+
+
+        // Creation de mon Formulaire
+        $form = $this->createFormBuilder($articles) 
+                    ->add('titre')
+                    ->add('resume')
+                    ->add('contenu')
+                    ->add('date')
+                    ->add('images')
+
+            // Demande le résultat
+            ->getForm();
+
+        // Analyse des Requetes & Traitement des information 
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $manager->persist($articles); 
+            $manager->flush();
+
+            return $this->redirectToRoute('article', 
+            ['id'=>$articles->getId()]); // Redirection vers la page
+        }
+
+        // Redirection du Formulaire vers le TWIG pour l’affichage avec
+        return $this->render('article/new2.html.twig', [
+            'formArticle' => $form->createView()
+        ]);
+    }
+
      /**
      * @Route("/nouveau", name="articles_nouveau", methods={"GET", "POST"})
      */
