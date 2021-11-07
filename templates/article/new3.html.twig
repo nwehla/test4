@@ -1,0 +1,34 @@
+{% extends 'base.html.twig '%}
+{% block body %}
+<div class="container">
+    <div class="section">
+        <div class="row">
+            <div class="col ml2 sl2">
+                <h1>Ajout d'un article</h1>
+                {{form_start(form)}}
+                {{form_label(form.titre)}}
+                {{form_widget(form.titre)}}
+                
+                {{form_label(form.contenu)}}
+                {{form_widget(form.contenu)}}
+                
+                {{form_label(form.date)}}
+                {{form_widget(form.date)}}
+                
+                {{form_label(form.resume)}}
+                {{form_widget(form.resume)}}
+                
+                {{form_label(form.images)}}
+                {{form_widget(form.images)}}
+
+                
+                <button class="button btn btn-success btn-lg center-block" id="submitBtn">Check it out!</button>
+
+                {{form_end(form)}}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock body %}
