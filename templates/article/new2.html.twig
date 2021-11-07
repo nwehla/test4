@@ -1,52 +1,44 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Formulaire Article{% endblock %}
-
+{% extends 'base.html.twig '%}
 {% block body %}
-
-<h3>Ajouter un article</h3>
-<div>
-    <form>
-        <div class="form-group">
-            
-            {{ form_start(formArticle)}}
-
-            <div class="row">
-              <div class="col-md-6">
-                {{ form_label(formArticle.titre) }}
-                 <input class="form-control"{{form_widget(formArticle.titre) }}>
-              </div>
-              <div class="col-md-6">
-                {{ form_label(formArticle.resume) }}
-                <input class="form-control"{{ form_widget(formArticle.resume) }}
-              </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="row">
-              <div class="col-md-6">
-                {{ form_label(formArticle.contenu) }}
-                
-            
-                <input  class="form-control" {{ form_widget(formArticle.contenu) }}
-              </div>
-              <div class="col-md-6">
-                {{ form_label(formArticle.date) }}
-                
-            
-                <input  class="form-control" {{ form_widget(formArticle.date) }}
-              </div>
-              <div class="col-md-6">
-                {{ form_label(formArticle.images) }}
-    
-                <input  class="form-control" {{ form_widget(formArticle.images) }}
-              </div>
-            </div>
-        </div>
-         {{ form_end(formArticle) }}
-                <div>
-                    <button class="btn btn-primary">Ajouter !</button>
-
+<div class="container">
+    <div class="section">
+        <div class="row">
+            <div class="col ml2 sl2">
+                <h1>Ajout d'un article</h1>
+                {{form_start(form)}}
+                <div class="form-group">
+                  <label for="titre">titre</label>
+                  {{form_widget(form.titre)}}
                 </div>
-      </form>
-{% endblock %}
+                <div class="form-group">
+                  <label for="contenu">contenu</label>
+                  {{form_widget(form.contenu)}}  
+                </div>  
+                              
+                <div class="form-group">
+                  <label for="date">date</label>
+                  {{form_widget(form.date)}}  
+                </div>  
+                              
+                <div class="form-group">
+                  <label for="resume">resume</label>
+                  {{form_widget(form.resume)}}  
+                </div>  
+                              
+                <div class="form-group">
+                  <label for="image">image</label>
+                  {{form_widget(form.images)}}  
+                </div>  
+                      
+
+                
+                <button class="button btn btn-success btn-lg center-block" id="submitBtn">cliquez ici !</button>
+
+                {{form_end(form)}}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock body %}

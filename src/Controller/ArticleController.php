@@ -48,7 +48,7 @@ class ArticleController extends AbstractController
 
                    return $this->redirectToRoute("article");
                }
-               return $this->render("article/new3.html.twig",[
+               return $this->render("article/new2.html.twig",[
                    "form"=>$form->createView(),
                ]);
             
