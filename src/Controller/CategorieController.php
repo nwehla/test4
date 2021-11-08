@@ -50,13 +50,12 @@ class CategorieController extends AbstractController
             return $this->render('categorie/formulaire.html.twig', [
                 
                 'form'=>$form->createView(),
-                
             ]);
         }
         /**
          *@Route("/{id}",name="cat_affiche")
          */
-        public function afficheCategorie( CategorieRepository $CategorieRepository  , Categorie $Categorie ,Request $Request,EntityManagerInterFace $Manager):Response
+        public function afficheCategorie(  Categorie $Categorie ):Response
         {
             return $this->render("Categorie/affiche.html.twig",[
                 "id"=>$Categorie->getId(),

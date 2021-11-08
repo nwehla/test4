@@ -29,7 +29,7 @@ class UtilisateurController extends AbstractController
 
         return $this->render('utilisateur/index.html.twig', [
             'controller_name' => 'UtilisateurController',
-            "utilisateur" => $utilisateurs,
+            "utilisateurs" => $utilisateurs,
         ]);
     }
     /**
@@ -44,7 +44,7 @@ class UtilisateurController extends AbstractController
             $utilisateurs = $form->getData();
             $manager->persist($utilisateurs);
             $manager->flush();
-            return $this->redirectToRoute("utilisateur");
+            return $this->redirectToRoute("uti_affiche",["id"=>$utilisateurs->getId()]);
         }
         return $this->render("utilisateur/form2.html.twig", [
             "form" => $form->createView(),

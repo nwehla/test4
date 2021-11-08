@@ -10,62 +10,55 @@
         <h1><a href="{{path("form_uti")}}">Ajouter un utilisateur</a></h1>
     </div>
 <h1>
-    <h1>utilisateurs </h1>
- <table class="table table-dark table-striped">
-          <thead>
+<div class="row bg-success light border">
+  <h1><a class="nav-link " href="{{ path('form_uti')}}">Ajouter une nouvelle utilisateur !</a></h1>
+</div>
+
+
+<div>
+
+
+  <table class="table table-dark table-striped">
     <tr>
-      <th>id</th>
-      <th>Nom</th>
-      <th>Prenom</th>
-      <th>Adresse</th>
-      <th>Mot de passe</th>
-      <th>Login</th>
-      <th>Photo</th>
-      <th>Email</th>
-      <th>Action</th>
+      <th scope="col">id</th>
+      <th scope="col">nom</th>
+      <th scope="col">prenom</th>  
+      <th scope="col">Adresse</th>  
+      <th scope="col">motdepasse</th>
+      <th scope="col">login</th>
+      <th scope="col">Photo</th>
+      <th scope="col">email</th>
+      <th scope="col">Action </th>
     </tr>
   </thead>
-        <tbody>
-        {% for utilisateurs in utilisateur %}
-        <tr>
-        <th scope="row"> {{utilisateurs.id}}
+  <tbody>
+  {% for utilisateur in utilisateurs %}
+    <tr>
+      <th scope="row"> {{utilisateur.id}}
       </th>
-        
-        <td>
-          {{utilisateurs.nom}}
+      <td> {{utilisateur.nom}}
+      </td>
+      <td> {{utilisateur.prenom}}
+      </td>
+      <td> {{utilisateur.adresse}}
+      </td>
+      <td> {{utilisateur.motdepasse}}
+      </td>
+      <td> {{utilisateur.login}}
+      </td>
+      <td> {{utilisateur.photo}}
+      </td>
+
+      <td> {{utilisateur.email}}
+      </td>
+      
+   {% endfor %}
+      <td>
+          {# <a href="{{ path ("uti_affiche",{"id":utilisateur.id })}}">Cliquez ICI !</a> #}
         </td>
-        
-        <td>
-          {{utilisateurs.Prenom}}
-        </td>
-        <td>
-        <td>
-          {{utilisateurs.adresse}}
-        </td>
-        <td>
-          {{utilisateurs.motdepasse}}
-        </td>
-        <td>
-          {{utilisateurs.login}}
-        </td>
-        <td>
-          {{utilisateurs.Photo}}
-        </td>
-        <td>
-          {{utilisateurs.email}}
-        </td>
-        <td>
-          <a href="{{path('uti_affiche', {'id':utilisateurs.id})}}">Cliquez ICI !</a>
-        </td>
-        
-        </tr>
-        
-        
-{% endfor %}
-          
+    </tr>
+  </tbody>
+</table>
 
 
-        </tbody>
-    </table>
-    </div>
-{% endblock %}
+    {% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les locations !{% endblock %}
+
+
+{% block body %}
+<div class="row bg-success light border">
+  <h1><a class="nav-link " href="{{path('ajouter_location_form')}}">Ajouter une nouvelle Location !</a></h1>
+</div>
+
+
+<div>
+
+
+  <table class="table table-dark table-striped">
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Titre</th>
+      <th scope="col">Date</th>
+      <th scope="col">Categorie</th>
+      <th scope="col">Images</th>
+      <th scope="col">Description</th>
+      <th scope="col">Valeur</th>
+      <th scope="col">Adresse</th>
+      <th scope="col">Accessibilité</th>
+      <th scope="col">Status</th>
+      <th scope="col">A la Une </th>
+      <th scope="col">Action </th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for location in loc %}
+    <tr>
+      <th scope="row"> {{location.id}}
+      </th>
+      <td> {{location.titre}}
+      </td>
+      <td> {{location.Date|date("d/m/Y")}}
+      </td>
+      <td> {{location.categories}}
+      </td>
+      <td> {{location.images}}
+      </td>
+      <td> {{location.description}}
+      </td>
+      <td> {{location.Valeur}}
+      </td>
+      <td> {{location.adresse}}
+      </td>
+      <td> {{location.accessibility}}
+      </td>
+      <td> {{location.status}}
+      </td>
+      <td> {{location.alaune}}
+   {% endfor %}
+      </td>
+      {# <td><a href="{{path('art_affichage', {'id':location.id})}}">Cliquez ICI !</a> #}
+ </td>
+    </tr>
+  </tbody>
+</table>
+{% endblock %}

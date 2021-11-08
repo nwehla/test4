@@ -21,6 +21,12 @@ class Location
      * @ORM\Column(type="date")
      */
     private $date;
+     
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $titre;
+
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -47,21 +53,25 @@ class Location
      */
     private $adresse;
 
-    /**
-     * @ORM\Column(type="string",length=255)
-     */
-    private $accessibility ;
-
-    /**
-     * @ORM\Column(type="array")
-     */
-    private $status = ["actif","occupé","desactive"];
-
+    
+   
     /**
      * @ORM\Column(type="boolean")
      */
     private $alaune;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $status;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $accessibility;
+
+   
+    
     public function getId(): ?int
     {
         return $this->id;
@@ -139,29 +149,9 @@ class Location
         return $this;
     }
 
-    public function getAccessibility(): ?array
-    {
-        return $this->accessibility;
-    }
+    
 
-    public function setAccessibility(array $accessibility): self
-    {
-        $this->accessibility = $accessibility;
-
-        return $this;
-    }
-
-    public function getStatus(): ?array
-    {
-        return $this->status;
-    }
-
-    public function setStatus(array $status): self
-    {
-        $this->status = $status;
-
-        return $this;
-    }
+   
 
     public function getAlaune(): ?bool
     {
@@ -174,4 +164,41 @@ class Location
 
         return $this;
     }
+
+    public function getStatus(): ?string
+    {
+        return $this->status;
+    }
+
+    public function setStatus(string $status): self
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    public function getTitre(): ?string
+    {
+        return $this->titre;
+    }
+
+    public function setTitre(string $titre): self
+    {
+        $this->titre = $titre;
+
+        return $this;
+    }
+
+    public function getAccessibility(): ?string
+    {
+        return $this->accessibility;
+    }
+
+    public function setAccessibility(string $accessibility): self
+    {
+        $this->accessibility = $accessibility;
+
+        return $this;
+    }
+
 }
