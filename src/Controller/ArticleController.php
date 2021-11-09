@@ -128,7 +128,7 @@ class ArticleController extends AbstractController
     public function montrer(Articles $articles, ArticlesRepository $articlesRepository, Request $request, EntityManagerInterface $manager): Response
     {
         return $this->render('article/affichage.html.twig', [
-            'id' => $articles->getId(),
+            // 'id' => $articles->getId(),
             'articles' => $articles,
         ]);
     }
