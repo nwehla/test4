@@ -10,7 +10,7 @@
         <h1><a href="{{path("form_uti")}}">Ajouter un utitlisateur</a></h1>
     </div>
 <div>
-  <table class="table table-dark table-striped">
+  <table class="table">
     <tr>
       <th scope="col">id</th>
       <th scope="col">nom</th>
@@ -43,7 +43,7 @@
 
       <td> {{ut.email}}
       </td>
-      <td>
+      <td class="btn btn-outline-info">
         <a href="{{ path('uti_affiche', {'id':ut.id})}}">Cliquez ICI !</a>
       </td>
    {% endfor %}

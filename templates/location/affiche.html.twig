@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Les locations{% endblock %}
+
 
 {% block body %}
-<div class="row bg-success light border">
+<div class="row btn btn-outline-success">
   <h1><a href="{{path("location")}}">Retour aux locations!</a></h1>
 </div>
 
@@ -11,7 +11,7 @@
 <div>
 <h1>
     <h1><p>Informations sur la location N° {{location.id}} , Titre: {{location.titre}} </p></h1>
-<table class="table table-dark table-striped">
+<table class="table table-success">
     <tr>
       <th scope="col">id</th>
       <th scope="col">Titre</th>

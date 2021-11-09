@@ -3,15 +3,15 @@
 {% block title %}Categorie{% endblock %}
 
 {% block body %}
-<div class="row bg-success">
+<div class="row btn btn-outline-success">
   <h1><a href="{{path("fomulaire_affiche")}}">Ajouter une categorie !</a></h1>
 </div>
 
 <div>
 <h1>
-    <h1>Categorie index</h1>
-<table class="table">
-        <thead>
+    <h1>Categorie </h1>
+<table class="table table-striped bordored-radius=2px text-center ">
+        <thead class="table-danger">
             <tr>
             <th>Id</th>
                 <th>Title</th>
@@ -36,7 +36,7 @@
           {{categorie.resume}}
         </td>
         
-        <td>
+        <td class="btn btn-outline-info">
           <a href="{{path('cat_affiche',{'id':categorie.id})}}">Cliquez ici !</a>
         </td>
         
