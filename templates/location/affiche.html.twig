@@ -10,43 +10,50 @@
 
 <div>
 <h1>
-    <h1><p>Informations sur : {{uti.nom}} {{uti.prenom}}</p></h1>
-
-  <table class="table table-dark table-striped">
+    <h1><p>Informations sur la location N° {{location.id}} , Titre: {{location.titre}} </p></h1>
+<table class="table table-dark table-striped">
     <tr>
       <th scope="col">id</th>
-      <th scope="col">Nom</th>
-      <th scope="col">Prenom</th>
+      <th scope="col">Titre</th>
+      <th scope="col">Date</th>
+      <th scope="col">Categorie</th>
+      <th scope="col">Images</th>
+      <th scope="col">Description</th>
+      <th scope="col">Valeur</th>
       <th scope="col">Adresse</th>
-      <th scope="col">Mot de passe</th>
-      <th scope="col">Login</th>
-      <th scope="col">Photo</th>
-      <th scope="col">Email</th>
+      <th scope="col">Accessibilité</th>
+      <th scope="col">Status</th>
+      <th scope="col">A la Une </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row"> {{uti.id}}
+      <th scope="row"> {{location.id}}
       </th>
-      <td> {{uti.nom}}
+      <td> {{location.titre}}
       </td>
-      <td> {{uti.prenom}}
+      <td> {{location.Date|date("d/m/Y")}}
       </td>
-      <td> {{uti.adresse}}
+      <td> {{location.categories}}
       </td>
-      <td> {{uti.motdepasse}}
+      <td> {{location.images}}
       </td>
-      <td> {{uti.login}}
+      <td> {{location.description}}
       </td>
-      <td> {{uti.photo}}
+      <td> {{location.Valeur}}
       </td>
-      
-      <td> {{uti.email}}
+      <td> {{location.adresse}}
       </td>
-      
-    
-    
+      <td> {{location.accessibility}}
+      </td>
+      <td> {{location.status}}
+      </td>
+      <td> {{location.alaune}}
+      </td>
+ 
     </tr>
   </tbody>
 </table>
-{% endblock %}
+
+  
+  {% endblock %}

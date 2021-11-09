@@ -51,6 +51,17 @@ class LocationController extends AbstractController
             
             
         ]);
+    }
+        /**
+         * @Route("/{id}",name="loc_affichage")
+         */
+        public function identifier(Location $locations):Response
+        {
+            return $this->render("location/affiche.html.twig",[
+                "location"=>$locations,
+            ]);
+
+        }
 
     }
-}
+

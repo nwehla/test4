@@ -8,10 +8,6 @@
   <h1><a class="nav-link " href="{{path('ajouter_location_form')}}">Ajouter une nouvelle Location !</a></h1>
 </div>
 
-
-<div>
-
-
   <table class="table table-dark table-striped">
     <tr>
       <th scope="col">id</th>
@@ -52,10 +48,11 @@
       <td> {{location.status}}
       </td>
       <td> {{location.alaune}}
+   <td><a href="{{path('loc_affichage', {'id':location.id})}}">Cliquez ICI !</a>
+ </td>
    {% endfor %}
       </td>
-      {# <td><a href="{{path('art_affichage', {'id':location.id})}}">Cliquez ICI !</a> #}
- </td>
+      
     </tr>
   </tbody>
 </table>
