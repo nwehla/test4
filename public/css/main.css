@@ -1,25 +1,22 @@
 table
 {
-  padding: 5px;
-  margin: 10px;
     border-collapse: separate !important;
     border-spacing:0;
-    text-align: center;
-    background-color:brown;
+    background-color:lightcyan;
 }
 body{
-  background-color:black;
-  margin: 10,10;
-font-family: Arial, Helvetica, sans-serif;
+  background-image:url("{{asset('asset/image/background2.jpg')}}");
+/* background-color: black; */
+  font-family: Arial, Helvetica, sans-serif;
 text-align: center;
-color:whitesmoke
+ 
 
 }
 
              
 .table th
 {
-    border:solid 1px black;
+    border:" black solid 1px";
 }
              
 .table thead th
@@ -29,7 +26,7 @@ color:whitesmoke
              
 .table td
 {
-    border:solid 1px black;
+    border:black solid 1px ;
 }
  footer {
   padding: 2rem 0;
@@ -39,6 +36,4 @@ color:whitesmoke
   font-size: 0.8rem;
 }
 
-body.sidebar-toggled footer.sticky-footer {
-  width: 100%;
-}
+
