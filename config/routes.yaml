@@ -1,6 +1,6 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+index:
+   path: /
+   controller: App\Controller\BibliothequeController::index
 #index:
 #    path: /accueil
 #    controller: App\Controller\HomeController::index

@@ -5,9 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-/**
- * @Route("biblio")
- */
+
 class BibliothequeController extends AbstractController
 {
     /**
@@ -65,9 +63,9 @@ class BibliothequeController extends AbstractController
         ]);
     }
     /**
-     * @Route("/location", name="bibi_location")
+     * @Route("/louer", name="bibilouons")
      */
-    public function louer(): Response
+    public function echanger(): Response
     {
         return $this->render('bibliotheque/location.html.twig', [
             'controller_name' => 'BibliothequeController',
@@ -82,16 +80,7 @@ class BibliothequeController extends AbstractController
             'controller_name' => 'BibliothequeController',
         ]);
     }
-    /**
-     * @Route("/admin", name="bibi_admin")
-     */
-    public function admin(): Response
-    {
-        return $this->render('bibliotheque/admin.html.twig', [
-            'controller_name' => 'BibliothequeController',
-        ]);
-        
-    }
+   
     /**
      * @Route("/administration", name="bibi_administration")
      */
